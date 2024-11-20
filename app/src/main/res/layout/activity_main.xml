@@ -1,19 +1,384 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#26235F"
     tools:context=".MainActivity">
 
+    <!-- Título -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:gravity="start"
+        android:padding="16dp"
+        android:text="Comprar"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Tabs -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <!-- Vuelo -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp">
+                <ImageButton
+                    android:id="@+id/tab_vuelos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/Vuelo"
+                android:layout_marginEnd="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Vuelo"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <!-- Paquetes -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp">
+                <ImageButton
+                    android:id="@+id/tab_paquetes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/Paquetes"
+                android:layout_marginEnd="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Paquetes"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <!-- Hoteles -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp">
+                <ImageButton
+                    android:id="@+id/tab_hoteles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/Hoteles"
+                android:layout_marginEnd="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Hoteles"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <!-- Autos -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp">
+                <ImageButton
+                    android:id="@+id/tab_autos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/Autos"
+                android:layout_marginEnd="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Autos"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <!-- Asistencia -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp">
+                <ImageButton
+                    android:id="@+id/tab_asistencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/Asistencia"
+                android:layout_marginEnd="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Asistencia"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+
+
+
+    <!-- Formulario -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:layout_margin="8dp">
+
+            <!-- Campos de entrada -->
+            <EditText
+                android:id="@+id/origen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Origen"
+                android:drawablePadding="8dp"
+                android:padding="12dp"
+                android:background="@drawable/rounded_edittext" />
+
+            <EditText
+                android:id="@+id/destino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Destino"
+                android:drawablePadding="8dp"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_edittext" />
+
+            <!-- Fechas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/data_ida"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Ida"
+                    android:padding="12dp"
+                    android:background="@drawable/rounded_edittext" />
+
+                <EditText
+                    android:id="@+id/data_volta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:hint="Vuelta"
+                    android:padding="12dp"
+                    android:background="@drawable/rounded_edittext" />
+            </LinearLayout>
+
+            <!-- Clase de servicio -->
+            <Spinner
+                android:id="@+id/clase_servicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_edittext"
+                android:entries="@array/clase_servicio_options" />
+
+            <!-- Pasajeros -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/adultos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Adultos"
+                    android:background="@drawable/rounded_edittext" />
+
+                <EditText
+                    android:id="@+id/ninos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:hint="Niños"
+                    android:background="@drawable/rounded_edittext" />
+
+                <EditText
+                    android:id="@+id/bebes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:hint="Bebés"
+                    android:background="@drawable/rounded_edittext" />
+            </LinearLayout>
+
+            <!-- Checkbox -->
+            <CheckBox
+                android:id="@+id/checkbox_millas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usa tus millas + dinero"
+                android:layout_marginTop="8dp"
+                android:textColor="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/Vuelos"
+                    app:srcCompat="@drawable/ic_search"
+                    android:background="@android:color/transparent"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/tv_buscar_vuelos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FF0000"
+                    android:gravity="center"
+                    android:text="BUSCAR VUELOS"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_edittext"
+                    android:textSize="14sp"
+                    android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"/>
+            </LinearLayout>
+
+
+</LinearLayout>
+    </ScrollView>
+
+    <!-- Footer -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="4dp">
+
+            <Button
+                android:id="@+id/footer_inicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_inicio"
+                android:text="Inicio"
+                android:background="@android:color/transparent"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginEnd="16dp"/>
+
+            <Button
+                android:id="@+id/footer_comprar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_comprar"
+                android:text="Comprar"
+                android:background="@android:color/transparent"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginEnd="16dp"/>
+
+            <Button
+                android:id="@+id/footer_mis_viajes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_trips"
+                android:text="Mis Viajes"
+                android:background="@android:color/transparent"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginEnd="16dp"/>
+
+            <Button
+                android:id="@+id/footer_notificaciones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_notifications"
+                android:text="Notificaciones"
+                android:background="@android:color/transparent"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginEnd="16dp"/>
+
+            <Button
+                android:id="@+id/footer_latam_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_latam_pass"
+                android:text="Latam Pass"
+                android:background="@android:color/transparent"
+                android:textColor="#000000"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+</LinearLayout>

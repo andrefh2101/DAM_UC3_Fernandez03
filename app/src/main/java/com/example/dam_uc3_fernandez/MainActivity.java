@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText origen, destino, dataIda, dataVolta;
     private Spinner claseServicio;
     private Calendar calendar;
+    private Button btnIdaYVuelta, btnSoloIda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         dataIda = findViewById(R.id.data_ida);
         dataVolta = findViewById(R.id.data_volta);
         claseServicio = findViewById(R.id.clase_servicio);
+
+        // Configuración de los botones de "Ida y vuelta" y "Solo ida"
+        btnIdaYVuelta = findViewById(R.id.btn_ida_y_vuelta);
+        btnSoloIda = findViewById(R.id.btn_solo_ida);
 
         // Configuración del ImageButton
         ImageButton imageButton = findViewById(R.id.imageButton);
@@ -54,6 +59,17 @@ public class MainActivity extends AppCompatActivity {
         dataVolta.setOnClickListener(v -> showDatePickerDialog(dataVolta, dataIda));
 
         setupSpinner();
+
+        // Configurar los botones de ida y vuelta
+        btnIdaYVuelta.setOnClickListener(v -> {
+            // Mostrar campo de vuelta
+            dataVolta.setVisibility(View.VISIBLE);
+        });
+
+        btnSoloIda.setOnClickListener(v -> {
+            // Ocultar campo de vuelta
+            dataVolta.setVisibility(View.GONE);
+        });
     }
 
     private void setupSpinner() {
